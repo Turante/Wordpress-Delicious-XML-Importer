@@ -1,0 +1,40 @@
+=== Delicious XML Importer ===
+Contributors: sillybean, aaronpk
+Tags: delicious, links, bookmarks, import
+Requires at least: 3.0
+Tested up to: 3.1
+Stable tag: 0.2.1
+
+Lets you import your Delicious bookmarks into WordPress as links or posts.
+
+== Installation ==
+
+1. Upload the plugin directory to `/wp-content/plugins/` 
+1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Visit Tools &rarr; Import &rarr; Delicious to begin importing.
+
+== Notes ==
+
+On the import screen, there's a link to <a href="https://api.del.icio.us/v1/posts/all?meta=yes">the Delicious API page</a> that exports all your bookmarks (including the private ones) to an XML file. Do not right click and press "save;" you will need to log in using your Delicious username and password first. Once the XML appears, you can save the file to your desktop. (Some browsers, like Safari, will show you a blank page. View source to make sure the XML is there.)
+
+If you created your Delicious account after Yahoo bought Delicious, you'll need to use the <a href="http://deliciousxml.com/">Delicious XML Exporter service</a> instead.
+
+You will have the option to import your bookmarks as links, with your Delicious tags becoming link categories, or as posts. Note that the WordPress link manager does not break up long lists into pages, the way the post and page managers do. If you have a lot of Delicious bookmarks, your link manager could become very, very slow after importing. You might be better off importing your bookmarks as posts, at least until the link manager screen gets updated.
+
+== Troubleshooting ==
+
+Check the number of Delicious links you have. (It's shown at the top of your Delicious page, and it's near the top of the XML file as well.) If the importer stops before it reaches that number, you can edit your XML file to remove all the bookmarks up to that point and try again.
+
+The importer cannot handle bookmarklets (links that begin with <em>javascript:</em>). If you come across one in your export file, you can remove the bookmarklet's entire &lt;post&gt; line from your XML file and re-import. 
+
+== Changelog ==
+
+= 0.2.1 =
+* Added link to the <a href="http://deliciousxml.com/">Delicious XML Exporter service</a> for users who can't access the API directly. (Thanks to Aaron Parecki for the tip.)
+
+= 0.2 =
+* Added the option to import bookmarks as links.
+* Added privacy settings. Delicious links that were marked as private will be imported as private posts or invisible links.
+
+= 0.1 =
+<a href="http://memografia.com/wordpress/delicious-to-wordpress-importer/">Guillermo Moreno</a>'s original importer.
